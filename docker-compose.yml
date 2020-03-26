@@ -1,0 +1,15 @@
+version: '3.7'
+
+services:
+
+  db:
+    image: mongo:4.2.3
+    ports:
+      - "27017-27019:27017-27019"
+
+  web:
+    image: caprica/sfa:latest
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
