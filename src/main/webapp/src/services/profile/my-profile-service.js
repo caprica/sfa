@@ -6,14 +6,8 @@ const getMyProfile = async () => {
     return axios.get(
         SERVICE_URL
     )
-    .then(response => {
-        console.log("GOT RESPONSE")
-        return response.data
-    })
-    .catch(error => {
-        console.log("GOT ERROR")
-        return Promise.reject(error)
-    })
+    .then(response => response.data)
+    .catch(error => Promise.reject(error))
 }
 
 const updateMyProfile = async (profile) => {
@@ -21,12 +15,8 @@ const updateMyProfile = async (profile) => {
         SERVICE_URL,
         profile
     )
-    .then(response => {
-        return response.data
-    })
-    .catch(error => {
-        return Promise.reject(error)
-    })
+    .then(response => response.data)
+    .catch(error => Promise.reject(error))
 }
 
 export const myProfileService = {

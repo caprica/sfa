@@ -6,7 +6,9 @@
 #  adoptopenjdk/openjdk11:x86_64-alpine-jre-11.0.6_10
 #
 # Note that using a different base operating system may require different commands (e.g. groupadd vs addgroup)
-FROM adoptopenjdk:11-jre-hotspot
+
+#FROM adoptopenjdk:11-jre-hotspot
+FROM adoptopenjdk/openjdk11:x86_64-alpine-jre-11.0.6_10
 
 LABEL maintainer="mark.lee@capricasoftware.co.uk"
 
@@ -18,7 +20,8 @@ ARG USER=sfa
 ARG APP_DIR=app
 
 # Create a new profile and group.
-RUN groupadd ${GROUP} && useradd -g ${GROUP} -s /bin/sh ${USER}
+#RUN groupadd ${GROUP} && useradd -g ${GROUP} -s /bin/sh ${USER}
+RUN addgroup ${GROUP} && adduser -G ${GROUP} -s /bin/sh -D ${USER}
 
 # Create and prepare the application directory.
 RUN mkdir -p ${APP_DIR}
