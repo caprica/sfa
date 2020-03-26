@@ -1,0 +1,487 @@
+{
+    "version": 6,
+    "entities": [
+        {
+            "entity": {
+                "type": "Project",
+                "id": "4a94cd94-c519-4415-9226-dc28fa5e59c3",
+                "name": "Some Fine Application API"
+            },
+            "children": [
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "085fb757-3962-4911-b814-4ee3ee04b9a8",
+                        "name": "Health Check"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "http",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:8080",
+                                    "path": "/health-check"
+                                },
+                                "id": "ad25e121-f6e0-481f-a3e2-9c4bc22f78c8",
+                                "name": "Health Check",
+                                "headers": []
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "0614dd0b-7b3c-48cb-9edc-80868e8dc5fa",
+                        "name": "My Profile Service"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "http",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:8080",
+                                    "path": "/api/my-profile"
+                                },
+                                "id": "2ebc69e4-9990-449a-9a55-9cc9be80694a",
+                                "name": "Get My Profile",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "Authorization",
+                                        "value": "${getEntityById(\"669507c8-1a90-452f-8abb-b409ed9141ce\").\"response\".\"headers\".\"authorization\"}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "requestBody": true,
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+                                    "name": "PUT"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text",
+                                    "textBody": "{\n  \"username\": \"mark\",\n  \"firstName\": \"Mark\",\n  \"lastName\": \"Lee\",\n  \"position\": \"Supreme Being\",\n  \"aboutMe\": \"I maked an update on you.\",\n  \"grants\": [\n    \"DELETE_PROFILE\",\n    \"GET_PROFILES\"\n  ]\n}"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "http",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:8080",
+                                    "path": "/api/my-profile"
+                                },
+                                "id": "8d970d83-402c-4bb0-8b23-733898c54eb3",
+                                "name": "Update My Profile",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "Authorization",
+                                        "value": "${getEntityById(\"669507c8-1a90-452f-8abb-b409ed9141ce\").\"response\".\"headers\".\"authorization\"}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "b7d94208-cdfb-4f15-8732-b666f4a40da2",
+                        "name": "Profile Service"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "requestBody": true,
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                                    "name": "POST"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text",
+                                    "textBody": "{\n  \"username\": \"mark\",\n  \"firstName\": \"Mark\",\n  \"lastName\": \"Lee\",\n  \"position\": \"Big Boss\",\n  \"aboutMe\": \"I am just so awesome, sometimes it hurts.\",\n  \"grants\": [\n    \"DELETE_PROFILE\",\n    \"GET_PROFILES\"\n  ]\n}"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "http",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:8080",
+                                    "path": "/api/profile"
+                                },
+                                "id": "11aaacd9-81c8-4d21-83b2-42c14b46e529",
+                                "name": "Create Profile",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "Authorization",
+                                        "value": "${getEntityById(\"669507c8-1a90-452f-8abb-b409ed9141ce\").\"response\".\"headers\".\"authorization\"}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.5",
+                                    "name": "DELETE"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "http",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:8080",
+                                    "path": "/api/profile/mark"
+                                },
+                                "id": "370a4bae-9149-44b7-9972-2d08fb85b7c2",
+                                "name": "Delete Profile",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Authorization",
+                                        "value": "${getEntityById(\"669507c8-1a90-452f-8abb-b409ed9141ce\").\"response\".\"headers\".\"authorization\"}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "http",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:8080",
+                                    "path": "/api/profile/mark"
+                                },
+                                "id": "8091434a-dbdf-4d36-80ee-3f18dfba9c5f",
+                                "name": "Get Profile",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "Authorization",
+                                        "value": "${getEntityById(\"669507c8-1a90-452f-8abb-b409ed9141ce\").\"response\".\"headers\".\"authorization\"}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "http",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:8080",
+                                    "path": "/api/profile"
+                                },
+                                "id": "d48df5fd-3e58-48c6-94bc-2ecdf6fface7",
+                                "name": "Get Profiles",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "Authorization",
+                                        "value": "${getEntityById(\"669507c8-1a90-452f-8abb-b409ed9141ce\").\"response\".\"headers\".\"authorization\"}"
+                                    }
+                                ]
+                            }
+                        },
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "requestBody": true,
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.4",
+                                    "name": "PUT"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text",
+                                    "textBody": "{\n  \"username\": \"mark\",\n  \"firstName\": \"Mark\",\n  \"lastName\": \"Lee\",\n  \"position\": \"Supreme Being\",\n  \"aboutMe\": \"I maked an update on you.\",\n  \"grants\": [\n    \"DELETE_PROFILE\",\n    \"GET_PROFILES\"\n  ]\n}"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "http",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:8080",
+                                    "path": "/api/profile/mark"
+                                },
+                                "id": "a16343f8-c7bd-4866-9fe0-28f0656f750d",
+                                "name": "Update Profile",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Content-Type",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "Authorization",
+                                        "value": "${getEntityById(\"669507c8-1a90-452f-8abb-b409ed9141ce\").\"response\".\"headers\".\"authorization\"}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Service",
+                        "id": "8ef67b7c-8da6-43aa-96b1-99d660237ef9",
+                        "name": "User"
+                    },
+                    "children": [
+                        {
+                            "entity": {
+                                "type": "Request",
+                                "method": {
+                                    "link": "http://tools.ietf.org/html/rfc7231#section-4.3.1",
+                                    "name": "GET"
+                                },
+                                "body": {
+                                    "formBody": {
+                                        "overrideContentType": true,
+                                        "encoding": "application/x-www-form-urlencoded",
+                                        "items": []
+                                    },
+                                    "bodyType": "Text"
+                                },
+                                "uri": {
+                                    "query": {
+                                        "delimiter": "&",
+                                        "items": []
+                                    },
+                                    "scheme": {
+                                        "name": "http",
+                                        "version": "V11"
+                                    },
+                                    "host": "localhost:8080",
+                                    "path": "/api/me"
+                                },
+                                "id": "65a836ba-8a3a-4e9f-af0e-4c3f813d479c",
+                                "name": "Get User",
+                                "headers": [
+                                    {
+                                        "enabled": true,
+                                        "name": "Accept",
+                                        "value": "application/json"
+                                    },
+                                    {
+                                        "enabled": true,
+                                        "name": "Authorization",
+                                        "value": "${getEntityById(\"669507c8-1a90-452f-8abb-b409ed9141ce\").\"response\".\"headers\".\"authorization\"}"
+                                    }
+                                ]
+                            }
+                        }
+                    ]
+                },
+                {
+                    "entity": {
+                        "type": "Request",
+                        "method": {
+                            "requestBody": true,
+                            "link": "http://tools.ietf.org/html/rfc7231#section-4.3.3",
+                            "name": "POST"
+                        },
+                        "body": {
+                            "formBody": {
+                                "overrideContentType": true,
+                                "encoding": "application/x-www-form-urlencoded",
+                                "items": []
+                            },
+                            "bodyType": "Text",
+                            "textBody": "{\n  \"username\": \"mark\",\n  \"password\": \"toomanysecrets\"\n}"
+                        },
+                        "uri": {
+                            "query": {
+                                "delimiter": "&",
+                                "items": []
+                            },
+                            "scheme": {
+                                "name": "http",
+                                "version": "V11"
+                            },
+                            "host": "localhost:8080",
+                            "path": "/login"
+                        },
+                        "id": "669507c8-1a90-452f-8abb-b409ed9141ce",
+                        "name": "Authenticate JWT",
+                        "headers": [
+                            {
+                                "enabled": true,
+                                "name": "Accept",
+                                "value": "application/json"
+                            },
+                            {
+                                "enabled": true,
+                                "name": "Content-Type",
+                                "value": "application/json"
+                            }
+                        ]
+                    }
+                }
+            ]
+        }
+    ]
+}
