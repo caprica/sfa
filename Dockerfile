@@ -38,3 +38,6 @@ COPY ${JAR_FILE} sfa.jar
 
 # Start the application.
 ENTRYPOINT ["java", "-jar", "sfa.jar"]
+
+# Instead, to enable remote debugging
+#ENTRYPOINT ["java", "-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005", "-jar", "sfa.jar"]
