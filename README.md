@@ -68,8 +68,8 @@ Some things are missing:
  - on the client, interception of API responses on failed requests to automatically login and retry the request (e.g.
    on expiry of the initial authentication token)
  - building a Docker image is not (yet) demonstrated, but is now my preferred approach
- - requires MongoDB to be setup externally
- - no routes for "/error", you will see a Whitelabel standard error page - I would prefer to route this to an error
+ - requires MongoDB to be setup externally, in particular indices are not automatically created (as per latest Spring
+   Data MongoDB documentation)
    page in the front-end application but I do not have this working yet (it seems kinda tricksy)
  - no linting, code coverage or any static analysis tools or reports integrated
  - some tests will fail unless you do a full build, including the front-end application, first (see below)
@@ -87,7 +87,9 @@ But the point of this project is not to demonstrate _everything_ since those thi
 ## Things That Really Aren't Fine At all
 
  - warning messages from the JVM complaining that some Spring classes are using invalid accesses
- - warning message about MongoDB indexes and using a deprecated mechanism
+
+You can get rid of the warning by passing "--illegal-access=deny", presumably Spring tries some other fallback code-path
+when the illegal access is denied.
  
 ## Credits
 
