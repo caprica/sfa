@@ -4,6 +4,7 @@ import { Switch, Route, Redirect } from 'react-router-dom'
 
 import SecureRoute from './components/security/SecureRoute'
 
+import ErrorPage from './pages/error'
 import HomePage from './pages/home'
 import LoginPage from './pages/login/LoginPage'
 import NotFoundPage from './pages/not-found'
@@ -39,6 +40,7 @@ const App = () => {
                     <SecureRoute exact path="/dashboard" component={DashboardPage}/>
                     <SecureRoute exact path="/my-profile/edit" component={EditProfilePage}/>
 
+                    <Route exect path="/system-error/:statusCode" component={ErrorPage}/>
                     <Route component={NotFoundPage}/>
                 </Switch>
             </Page>
