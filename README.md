@@ -88,8 +88,8 @@ But the point of this project is not to demonstrate _everything_ since those thi
 
  - warning messages from the JVM complaining that some Spring classes are using invalid accesses
 
-You can get rid of the warning by passing "--illegal-access=deny", presumably Spring tries some other fallback code-path
-when the illegal access is denied.
+You can get rid of the warning by passing "--illegal-access=deny" when starting the JVM, presumably Spring tries some
+other fallback code-path when the illegal access is denied.
  
 ## Credits
 
