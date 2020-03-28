@@ -24,6 +24,7 @@ The headline features successfully demonstrated by this project are:
  - Project Lombok, to reduce boilerplate - Lombok really is a very fine library
  - Simple mechanism to seed the database with sample data
  - Build/deploy with Docker and Docker Compose (example specification files provided in the project home directory)
+ - Cypress integration testing
  
  This is an _example_ application, and as such there are *some* tests implemented but test coverage is considerably 
  short of 100%.
