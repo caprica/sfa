@@ -18,7 +18,6 @@
  * limitations under the License.
  */
 
-
 package uk.co.caprica.sfa;
 
 import org.springframework.boot.SpringApplication;
