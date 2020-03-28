@@ -50,6 +50,8 @@ public class WebAppConfiguration implements WebMvcConfigurer  {
             .addViewController("/")
             .setViewName(APPLICATION_VIEW_NAME);
 
+        // FIXME these expressions are sufficient for simple cases, but will fail if the URL path segments contain other characters like "+"
+
         // For paths one level deep, e.g. "/home", "/login"
         registry
             .addViewController("/{x:[\\w\\-]+}")
