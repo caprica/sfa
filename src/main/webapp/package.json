@@ -3,14 +3,13 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.9.6",
+    "@material-ui/core": "^4.9.7",
     "@material-ui/lab": "^4.0.0-alpha.46",
-    "@testing-library/user-event": "^7.1.2",
     "axios": "^0.19.2",
-    "react": "^16.13.0",
-    "react-dom": "^16.13.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "react-scripts": "3.4.0",
+    "react-scripts": "3.4.1",
     "recharts": "^1.8.5",
     "rxjs": "^6.5.4"
   },
@@ -18,7 +17,8 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "cypress:open": "cypress open"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -37,7 +37,10 @@
   },
   "proxy": "http://localhost:8080",
   "devDependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.5.0"
+    "@testing-library/cypress": "^6.0.0",
+    "@testing-library/jest-dom": "^5.3.0",
+    "@testing-library/react": "^10.0.1",
+    "@testing-library/user-event": "^10.0.0",
+    "cypress": "^4.2.0"
   }
 }
