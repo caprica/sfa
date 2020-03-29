@@ -8,7 +8,7 @@ describe('The Dashboard Page', () => {
     })
 
     it('Shows the Dashboard page', () => {
-        cy.visit("dashboard")
+        cy.visit('dashboard')
 
         cy.url()
             .should('include', '/dashboard')
@@ -17,7 +17,7 @@ describe('The Dashboard Page', () => {
     })
 
     it('Shows the Edit My Profile page when edit profile clicked', () => {
-        cy.visit("dashboard")
+        cy.visit('dashboard')
 
         cy.url()
             .should('include', '/dashboard')

@@ -5,8 +5,15 @@
 
 describe('The Login Page', () => {
 
+    it('Shows the Login page', () => {
+        cy.visit('login')
+
+        cy.url()
+            .should('include', '/login')
+    })
+
     it('Enables login button only when inputs are filled', () => {
-        cy.visit("login")
+        cy.visit('login')
 
         cy.url()
             .should('include', '/login')
@@ -23,22 +30,22 @@ describe('The Login Page', () => {
             .should('be.disabled')
 
         cy.get('input[type=text]')
-            .type('a')
-            .should('have.value', 'a')
+            .type('some user')
+            .should('have.value', 'some user')
 
         cy.get('@loginButton')
             .should('be.disabled')
 
         cy.get('input[type=password]')
-            .type('a')
-            .should('have.value', 'a')
+            .type('some password')
+            .should('have.value', 'some password')
 
         cy.get('@loginButton')
             .should('not.be.disabled')
     })
 
     it('Advances focus from username to password when enter key is pressed', () => {
-        cy.visit("login")
+        cy.visit('login')
 
         cy.url()
             .should('include', '/login')
@@ -50,8 +57,8 @@ describe('The Login Page', () => {
             .should('have.attr', 'type', 'text')
 
         cy.get('input[type=text]')
-            .type('unknown user')
-            .should('have.value', 'unknown user')
+            .type('some user')
+            .should('have.value', 'some user')
             .type('{enter}')
 
         cy.focused()
@@ -61,7 +68,7 @@ describe('The Login Page', () => {
     // FIXME can I assert that the login button was pressed when enter was pressed in the password input?
 
     it('Shows error message and resets inputs when login credentials are invalid', () => {
-        cy.visit("login")
+        cy.visit('login')
 
         cy.url()
             .should('include', '/login')
@@ -106,7 +113,7 @@ describe('The Login Page', () => {
     })
 
     it('Resets inputs when the clear button is pressed', () => {
-        cy.visit("login")
+        cy.visit('login')
 
         cy.url()
             .should('include', '/login')
@@ -132,7 +139,7 @@ describe('The Login Page', () => {
     })
 
     it('Shows default (Home) page after a successful login', () => {
-        cy.visit("login")
+        cy.visit('login')
 
         cy.url()
             .should('include', '/login')
@@ -167,7 +174,7 @@ describe('The Login Page', () => {
     })
 
     it('Shows requested page after a successful login', () => {
-        cy.visit("dashboard")
+        cy.visit('dashboard')
 
         cy.url()
             .should('include', '/login')

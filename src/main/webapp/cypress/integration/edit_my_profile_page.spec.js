@@ -8,14 +8,14 @@ describe('The Edit My Profile Page', () => {
     })
 
     it('Shows the Edit My Profile page', () => {
-        cy.visit("my-profile/edit")
+        cy.visit('my-profile/edit')
 
         cy.url()
             .should('include', '/my-profile/edit')
     })
 
     it('Populates input controls with profile data', () => {
-        cy.visit("my-profile/edit")
+        cy.visit('my-profile/edit')
 
         cy.url()
             .should('include', '/my-profile/edit')
@@ -41,7 +41,7 @@ describe('The Edit My Profile Page', () => {
     //  2. history.goBack() in the EditProfilePage component triggers a CORS error, but only in this test, not normally
 
     it('Returns to previous page after updating profile', () => {
-        cy.visit("my-profile/edit")
+        cy.visit('my-profile/edit')
 
         cy.url()
             .should('include', '/my-profile/edit')
