@@ -24,7 +24,7 @@ The headline features successfully demonstrated by this project are:
  - Project Lombok, to reduce boilerplate - Lombok really is a very fine library
  - Simple mechanism to seed the database with sample data
  - Build/deploy with Docker and Docker Compose (example specification files provided in the project home directory)
- - Cypress integration testing
+ - Cypress integration testing, Cypress is just incredible, honestly
  - Use Docker and Docker Compose to create and deploy application and database containers
  - From IntelliJ, attach a remote debugger to the Java application running in the application container
  
@@ -93,6 +93,12 @@ But the point of this project is not to demonstrate _everything_ since those thi
 
 You can get rid of the warning by passing "--illegal-access=deny" when starting the JVM, presumably Spring tries some
 other fallback code-path when the illegal access is denied.
+
+## What It Looks Like
+
+![SFA Home Page](img/sfa-home-page.png)
+ 
+ React is just the finest. MaterialUI for React is also pretty fine.
  
 ## Credits
 
@@ -100,7 +106,9 @@ Over time I have used many similar approaches to get fully working client-side r
 Spring security integrated.
 
 The cleanest/nicest approach for Spring Boot configuration was explained
-[here](https://stackoverflow.com/a/50709789/2625478), so credit where it is due. 
+[here](https://stackoverflow.com/a/50709789/2625478), so credit where it is due.
+
+The regex's used in that example are _not_ perfect, but they are good enough for the common cases.
 
 ## Building and Running
 
@@ -136,6 +144,9 @@ Make sure to run the `spring-boot:build-info` goal before your IDE build (this c
 
 In the `etc` directory is an `sfa.json` file, this can be exported into the Talend Restlet API tester Chrome extension
 to help with API testing.
+
+Check the other project READMEs for some information on Docker, Docker Compose, Cypress and container debugging with
+IntelliJ.
 
 ## Foot Note
 
