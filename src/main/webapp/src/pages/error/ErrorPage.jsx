@@ -27,7 +27,7 @@ const ErrorPage = () => {
     return (
         <section className={classes.root}>
             <Container maxWidth="sm">
-                <Typography variant="h4">System Error</Typography>
+                <Typography variant="h4">System error</Typography>
                 <Divider/>
                 <Paper className={classes.content} elevation={2} square>
                     <Typography variant="body1">
