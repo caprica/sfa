@@ -92,6 +92,12 @@ docker-compose up
 
 Use "-d" to run containers in detached mode.
 
+To force the container image to be rebuilt:
+
+```
+docker-compose up --build
+```
+
 ### Stopping containers
 
 ```
