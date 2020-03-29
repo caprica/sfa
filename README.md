@@ -69,9 +69,11 @@ Some things are missing:
    on expiry of the initial authentication token)
  - requires MongoDB to be setup externally, in particular indices are not automatically created (as per latest Spring
    Data MongoDB documentation)
-   page in the front-end application but I do not have this working yet (it seems kinda tricksy)
+ - no intercepting of client-side auth failures to get a new JSON Web Token in the front-end application
  - no linting, code coverage or any static analysis tools or reports integrated
  - some tests will fail unless you do a full build, including the front-end application, first (see below)
+ - some tests will fail unless you have a MongoDB instance running, this is because the tests are @SpringBootTest and
+   they start up the full application context (database connection included) - I do not like this one little bit
 
 But the point of this project is not to demonstrate _everything_ since those things are demonstrated elsewhere.
 
