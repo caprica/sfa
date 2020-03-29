@@ -67,7 +67,6 @@ Some things are missing:
  - transactions, optimistic concurrency, versions in entities
  - on the client, interception of API responses on failed requests to automatically login and retry the request (e.g.
    on expiry of the initial authentication token)
- - building a Docker image is not (yet) demonstrated, but is now my preferred approach
  - requires MongoDB to be setup externally, in particular indices are not automatically created (as per latest Spring
    Data MongoDB documentation)
    page in the front-end application but I do not have this working yet (it seems kinda tricksy)
