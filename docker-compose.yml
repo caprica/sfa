@@ -45,9 +45,9 @@ services:
   db:
     image: mongo:4.2.3
     environment:
-      - MONGO_INITDB_DATABASE=sfa
-      - MONGO_INITDB_ROOT_USERNAME=dba
-      - MONGO_INITDB_ROOT_PASSWORD=flagboatwhitehinterland
+      - MONGO_INITDB_DATABASE=${DB_NAME}
+      - MONGO_INITDB_ROOT_USERNAME=${DB_ROOT_USERNAME}
+      - MONGO_INITDB_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
     volumes:
       - ./etc/docker-entrypoint-initdb.d/seed-database.js:/docker-entrypoint-initdb.d/seed-database.js:ro
     ports:

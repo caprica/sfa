@@ -25,6 +25,8 @@ The headline features successfully demonstrated by this project are:
  - Simple mechanism to seed the database with sample data
  - Build/deploy with Docker and Docker Compose (example specification files provided in the project home directory)
  - Cypress integration testing
+ - Use Docker and Docker Compose to create and deploy application and database containers
+ - From IntelliJ, attach a remote debugger to the Java application running in the application container
  
  This is an _example_ application, and as such there are *some* tests implemented but test coverage is considerably 
  short of 100%.
