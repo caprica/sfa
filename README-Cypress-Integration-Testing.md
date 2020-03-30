@@ -77,3 +77,9 @@ up correctly as though we were running the real application.
 ## Example Test Run
 
 A short video clip showing the tests for this project running is [here](https://youtu.be/KscvXW8dAMs).
+
+## Notes
+
+I do not like that Cypress starts Chrome in maximized mode, it is especially egregious when using an ultra-wide display.
+
+Instead, for a way to control window placement, check the `src/main/webapp/cypress/plugins/index.js` file.
