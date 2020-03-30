@@ -1,10 +1,8 @@
-import { authenticationService } from '../../src/components/security/authentication-service'
-
 describe('The Dashboard Page', () => {
 
     beforeEach(() => {
-        cy.wrap(authenticationService.logout())
-        cy.wrap(authenticationService.login('mark', 'toomanysecrets'))
+        cy.logout()
+        cy.login(Cypress.env('validUsername'), Cypress.env('validPassword'))
     })
 
     it('Shows the Dashboard page', () => {

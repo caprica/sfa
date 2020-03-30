@@ -23,3 +23,9 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite("visit", (originalFn, url, options) => { ... })
+
+import { authenticationService } from '../../src/components/security/authentication-service'
+
+Cypress.Commands.add("logout", () => authenticationService.logout())
+
+Cypress.Commands.add("login", (username, password) => authenticationService.login(username, password))
