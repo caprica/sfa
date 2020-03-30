@@ -98,7 +98,13 @@ other fallback code-path when the illegal access is denied.
 
 ![SFA Home Page](img/sfa-home-page.png)
  
- React is just the finest. MaterialUI for React is also pretty fine.
+React is just the finest. MaterialUI for React is also pretty fine.
+
+### Testing with Cypress
+
+![SFA Cypress Results](img/sfa-cypress.png)
+
+Cypress is so fine.
  
 ## Credits
 
