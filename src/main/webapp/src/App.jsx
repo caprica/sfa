@@ -2,22 +2,21 @@ import React from 'react'
 
 import { Switch, Route, Redirect } from 'react-router-dom'
 
-import SecureRoute from './components/security/SecureRoute'
+import SecureRoute from 'components/security/SecureRoute'
 
-import ErrorPage from './pages/error'
-import HomePage from './pages/home'
-import LoginPage from './pages/login/LoginPage'
-import NotFoundPage from './pages/not-found'
+import ErrorPage from 'pages/error'
+import HomePage from 'pages/home'
+import LoginPage from 'pages/login/LoginPage'
+import NotFoundPage from 'pages/not-found'
 
-import EditProfilePage from './pages/edit-profile'
-import DashboardPage from './pages/dashboard'
-import Page from './page'
+import EditProfilePage from 'pages/edit-profile'
+import DashboardPage from 'pages/dashboard'
+import Page from 'page'
 
-import './App.css'
+import 'App.css'
 
-import './components/security/axios-setup'
+import 'components/security/axios-setup'
 
-// FIXME change config to allow for absolute imports
 // FIXME we may like to load the user record on each route change
 
 const App = () => {

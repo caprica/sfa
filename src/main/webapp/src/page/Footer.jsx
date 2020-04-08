@@ -5,9 +5,9 @@ import clsx from 'clsx'
 import { makeStyles, Container, Typography } from '@material-ui/core'
 import { grey } from '@material-ui/core/colors'
 
-import CurrentYear from '../lib/current-year'
+import CurrentYear from 'lib/current-year'
 
-import FooterLogo from '../footer-logo.png'
+import FooterLogo from 'footer-logo.png'
 
 const useStyles = makeStyles(theme => ({
     root: {

@@ -18,7 +18,7 @@ import {
     Alert
 } from '@material-ui/lab'
 
-import { myProfileService } from '../../services/profile/my-profile-service'
+import { myProfileService } from 'services/profile/my-profile-service'
 
 const SNACKBAR_ORIGIN = { vertical: 'top', horizontal: 'center'}
 

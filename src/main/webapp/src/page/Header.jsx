@@ -8,7 +8,7 @@ import { makeStyles, Container, Typography } from '@material-ui/core'
 
 import { grey } from '@material-ui/core/colors'
 
-import CurrentUser from '../lib/current-user'
+import CurrentUser from 'lib/current-user'
 
 const useStyles = makeStyles(theme => ({
     root: {
@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
 }))
 
 const Header = ({ className }) => {
-    
+
     const classes = useStyles()
 
     return (

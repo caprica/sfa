@@ -11,7 +11,7 @@ import {
     Typography
 } from '@material-ui/core'
 
-import { authenticationService } from '../../components/security/authentication-service'
+import { authenticationService } from 'components/security/authentication-service'
 
 const useStyles = makeStyles(theme => ({
     root: {

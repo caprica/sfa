@@ -1,6 +1,6 @@
 import React from 'react'
 import { Redirect, useHistory, useLocation } from 'react-router-dom'
-import { authenticationService } from '../../components/security/authentication-service';
+import { authenticationService } from 'components/security/authentication-service';
 import { makeStyles, Button, Container, Divider, Paper, TextField, Typography } from '@material-ui/core'
 import { Alert, AlertTitle } from '@material-ui/lab'
 

@@ -11,7 +11,7 @@ import ProfileCard from './ProfileCard'
 
 import Gibberish from './Gibberish'
 
-import { myProfileService } from '../../services/profile/my-profile-service'
+import { myProfileService } from 'services/profile/my-profile-service'
 
 const useStyles = makeStyles(theme => ({
     root: {
