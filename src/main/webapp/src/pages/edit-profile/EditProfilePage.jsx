@@ -55,7 +55,7 @@ const EditProfilePage = ({ className }) => {
         setWorking(true)
         myProfileService.getMyProfile()
             .then(profile => setProfile(profile))
-            .catch(error => setError(`Failed to get profile: ${error}`))
+            .catch(error => error.status !== 401 && setError(`Failed to get profile: ${error.statusText}`))
             .finally(() => setWorking(false))
     }, [])
 

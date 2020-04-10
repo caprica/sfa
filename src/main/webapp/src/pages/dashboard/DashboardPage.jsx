@@ -38,7 +38,7 @@ const DashboardPage = () => {
     React.useEffect(() => {
         myProfileService.getMyProfile()
             .then(profile => setProfile(profile))
-            .catch(error => setError(error))
+            .catch(error => error.status !== 401 && setError(`Failed to get profile: ${error.statusText}`))
     }, [])
 
     return (

@@ -29,6 +29,7 @@ const logout = () => {
 export const authenticationService = {
     login,
     logout,
+    authenticationPath : AUTHENTICATION_PATH,
     currentUser: currentUserSubject.asObservable(),
-    get currentUserValue () { return currentUserSubject.value }
+    get currentUserValue() { return currentUserSubject.value }
 }

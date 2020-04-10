@@ -15,8 +15,6 @@ import Page from 'page'
 
 import 'App.css'
 
-import 'components/security/axios-setup'
-
 // FIXME we may like to load the user record on each route change
 
 const App = () => {

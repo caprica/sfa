@@ -1,18 +1,26 @@
 import React                    from 'react'
 import ReactDOM                 from 'react-dom'
 
-import { Route, BrowserRouter } from 'react-router-dom'
+import { Route, Router }        from 'react-router-dom'
 
 import App                      from 'App'
 
 import * as serviceWorker       from 'serviceWorker'
 
+import { createBrowserHistory } from "history"
+import { initialiseAxios }      from 'components/security/axios-setup'
+
 import 'index.css'
 
+// We use a custom history so we can share it between the React router and other non-React components
+const history = createBrowserHistory()
+
+initialiseAxios(history)
+
 ReactDOM.render(
-    <BrowserRouter>
+    <Router history={history}>
         <Route component={App}/>
-    </BrowserRouter>,
+    </Router>,
     document.getElementById('root')
 )
 
