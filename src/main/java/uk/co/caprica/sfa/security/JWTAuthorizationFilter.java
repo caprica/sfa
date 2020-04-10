@@ -21,6 +21,7 @@
 package uk.co.caprica.sfa.security;
 
 import com.auth0.jwt.JWT;
+import com.auth0.jwt.exceptions.TokenExpiredException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.http.HttpHeaders;
@@ -80,14 +81,18 @@ public class JWTAuthorizationFilter extends BasicAuthenticationFilter {
         log.debug("getAuthentication()");
         String token = request.getHeader(HttpHeaders.AUTHORIZATION);
         if (token != null) {
-            String username = JWT
-                .require(HMAC512(jwtSecret.getBytes()))
-                .build()
-                .verify(token.replace(tokenPrefix, ""))
-                .getSubject();
-            log.debug("username={}", username);
-            if (username != null) {
-                return convertUser(userDetailsService.loadUserByUsername(username));
+            try {
+                String username = JWT
+                    .require(HMAC512(jwtSecret.getBytes()))
+                    .build()
+                    .verify(token.replace(tokenPrefix, ""))
+                    .getSubject();
+                log.debug("username={}", username);
+                if (username != null) {
+                    return convertUser(userDetailsService.loadUserByUsername(username));
+                }
+            } catch (TokenExpiredException e) {
+                log.debug("The token expired");
             }
         }
         return null;
